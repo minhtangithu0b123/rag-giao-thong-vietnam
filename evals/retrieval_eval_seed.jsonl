@@ -1,0 +1,41 @@
+{"question": "nồng độ cồn xe máy bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy có nồng độ cồn dưới 0,25 mg/l khí thở phạt sao", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy có nồng độ cồn trên 0,4 mg/l khí thở bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "vượt đèn đỏ xe máy bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy chạy quá tốc độ trên 20km/h bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy chạy quá tốc độ 10 đến 20 km/h phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy không đội mũ bảo hiểm phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "chở người ngồi sau không đội mũ bảo hiểm trên xe máy bị phạt không", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy đi sai làn đường bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy không có giấy phép lái xe bị phạt thế nào", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy đi ngược chiều bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "xe máy quay đầu xe trong hầm đường bộ bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "ô tô vượt đèn đỏ bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô chạy quá tốc độ trên 20km/h bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô chạy quá tốc độ 5 đến dưới 10 km/h phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô có nồng độ cồn bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô nồng độ cồn trên 0,4 mg/l khí thở phạt sao", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô đi sai làn bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô không chấp hành biển báo bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô đi ngược chiều bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô dừng xe trong hầm đường bộ không đúng nơi bị phạt sao", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "ô tô không thắt dây an toàn bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "người đi bộ vượt đèn đỏ bị phạt không", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 10", "expected_vehicle_group": "pedestrian"}
+{"question": "người đi bộ đi vào đường cao tốc bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 10", "expected_vehicle_group": "pedestrian"}
+{"question": "người đi bộ không đi đúng phần đường bị phạt sao", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 10", "expected_vehicle_group": "pedestrian"}
+{"question": "người đi bộ qua đường không đúng nơi quy định bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 10", "expected_vehicle_group": "pedestrian"}
+{"question": "người đi bộ bám vào xe đang chạy bị phạt không", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 10", "expected_vehicle_group": "pedestrian"}
+{"question": "xe đạp vượt đèn đỏ bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 9", "expected_vehicle_group": "bicycle"}
+{"question": "xe đạp đi sai làn bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 9", "expected_vehicle_group": "bicycle"}
+{"question": "xe đạp có nồng độ cồn bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 9", "expected_vehicle_group": "bicycle"}
+{"question": "xe đạp đi vào đường cấm bị phạt không", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 9", "expected_vehicle_group": "bicycle"}
+{"question": "xe đạp không đi bên phải theo chiều đi của mình bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 9", "expected_vehicle_group": "bicycle"}
+{"question": "xe máy chuyên dùng vượt đèn đỏ bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 8", "expected_vehicle_group": "specialized_vehicle"}
+{"question": "máy kéo chạy quá tốc độ bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 8", "expected_vehicle_group": "specialized_vehicle"}
+{"question": "xe máy chuyên dùng có nồng độ cồn bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 8", "expected_vehicle_group": "specialized_vehicle"}
+{"question": "máy kéo đi sai làn đường bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 8", "expected_vehicle_group": "specialized_vehicle"}
+{"question": "xe máy chuyên dùng đi ngược chiều bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 8", "expected_vehicle_group": "specialized_vehicle"}
+{"question": "không chấp hành đèn tín hiệu giao thông bị phạt bao nhiêu với xe máy", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "không chấp hành đèn tín hiệu giao thông với ô tô bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}
+{"question": "đi vào khu vực cấm bằng xe máy bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 7", "expected_vehicle_group": "motorbike"}
+{"question": "đi vào khu vực cấm bằng ô tô bị phạt bao nhiêu", "expected_so_hieu": "168/2024/NĐ-CP", "expected_dieu": "Điều 6", "expected_vehicle_group": "car"}

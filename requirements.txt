@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+qdrant-client
+sentence-transformers
+torch
+numpy
+tqdm
+openai
+faiss-cpu
+chromadb
+rank-bm25

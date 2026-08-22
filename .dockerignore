@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.git/
+.gitignore
+.codex/
+.agents/
+
+# Local/generated data is mounted by docker-compose instead of copied into image.
+data/
+doc1.json
+doc2.json
+*.sqlite3
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs/cache
+*.log
+.cache/
+.pytest_cache/

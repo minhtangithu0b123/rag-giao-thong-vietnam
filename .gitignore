@@ -1,0 +1,30 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# Local vector/data artifacts. Keep raw/processed/index locally unless you intentionally want to version them.
+data/chroma/
+data/index/
+*.sqlite3
+
+# Large/local documents
+doc1.json
+doc2.json
+legal_documents*.json
+
+# OS/editor
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs/cache
+*.log
+.cache/
+.pytest_cache/
+
+backend_huong_dan_chi_tiet.md
+fastapi_ngay_mai.md
+rag_luat_giao_thong_plan.md
+frontend/README.md

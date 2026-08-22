@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag_giaothong_backend
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      LLM_MODEL: ${LLM_MODEL:-gpt-4o-mini}
+      ENABLE_QUERY_REWRITE: ${ENABLE_QUERY_REWRITE:-1}
+      PYTHONIOENCODING: utf-8
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

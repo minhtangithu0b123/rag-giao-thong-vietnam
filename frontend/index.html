@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Lu&#7853;t Giao Th&#244;ng</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-section" aria-label="Khung hoi dap">
+        <header class="topbar">
+          <div class="brand-block">
+            <span class="eyebrow">Vietnam Traffic Law RAG</span>
+            <h1>RAG Lu&#7853;t Giao Th&#244;ng</h1>
+            <p>H&#7887;i &#273;&#225;p c&#243; tr&#237;ch d&#7851;n v&#259;n b&#7843;n, &#273;i&#7873;u v&#224; kho&#7843;n.</p>
+          </div>
+          <div class="topbar-actions">
+            <span class="status-pill" id="apiStatus"><span></span>Ch&#432;a ki&#7875;m tra backend</span>
+          </div>
+        </header>
+
+        <div class="quick-prompts" aria-label="Cau hoi goi y">
+          <button type="button" data-question="n&#7891;ng &#273;&#7897; c&#7891;n xe m&#225;y b&#7883; ph&#7841;t bao nhi&#234;u">N&#7891;ng &#273;&#7897; c&#7891;n xe m&#225;y</button>
+          <button type="button" data-question="v&#432;&#7907;t &#273;&#232;n &#273;&#7887; xe m&#225;y b&#7883; ph&#7841;t bao nhi&#234;u">V&#432;&#7907;t &#273;&#232;n &#273;&#7887;</button>
+          <button type="button" data-question="&#244; t&#244; ch&#7841;y qu&#225; t&#7889;c &#273;&#7897; b&#7883; ph&#7841;t bao nhi&#234;u">Qu&#225; t&#7889;c &#273;&#7897; &#244; t&#244;</button>
+          <button type="button" data-question="ng&#432;&#7901;i &#273;i b&#7897; v&#432;&#7907;t &#273;&#232;n &#273;&#7887; b&#7883; ph&#7841;t kh&#244;ng">Ng&#432;&#7901;i &#273;i b&#7897;</button>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite"></div>
+
+        <form class="composer" id="questionForm">
+          <textarea
+            id="questionInput"
+            rows="2"
+            placeholder="Nh&#7853;p c&#226;u h&#7887;i, v&#237; d&#7909;: N&#7891;ng &#273;&#7897; c&#7891;n xe m&#225;y b&#7883; ph&#7841;t bao nhi&#234;u?"
+            autocomplete="off"
+          ></textarea>
+          <button type="submit" id="sendButton">G&#7917;i</button>
+        </form>
+      </section>
+
+      <aside class="citation-section" aria-label="Nguon trich dan">
+        <div class="citation-header">
+          <div>
+            <span class="eyebrow">Evidence</span>
+            <h2>Ngu&#7891;n tr&#237;ch d&#7851;n</h2>
+          </div>
+          <button type="button" id="clearButton">X&#243;a</button>
+        </div>
+        <div class="citation-list" id="citationList">
+          <div class="empty-state">
+            <strong>Ch&#432;a c&#243; citation</strong>
+            <span>H&#227;y &#273;&#7863;t m&#7897;t c&#226;u h&#7887;i &#273;&#7875; xem &#273;o&#7841;n lu&#7853;t li&#234;n quan.</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
