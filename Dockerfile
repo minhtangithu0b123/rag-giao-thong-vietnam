@@ -15,10 +15,11 @@ RUN python -m pip install --upgrade pip \
 COPY app ./app
 COPY scripts ./scripts
 COPY data/processed ./data/processed
+COPY docker-entrypoint.sh ./docker-entrypoint.sh
 
-RUN mkdir -p data/raw data/chroma \
-    && python scripts/ingest_chroma.py
+RUN chmod +x docker-entrypoint.sh \
+    && mkdir -p data/raw data/chroma
 
 EXPOSE 8000
 
-CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD ["./docker-entrypoint.sh"]
