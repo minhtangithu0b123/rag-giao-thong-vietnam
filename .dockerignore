@@ -10,8 +10,10 @@ __pycache__/
 .codex/
 .agents/
 
-# Local/generated data is mounted by docker-compose instead of copied into image.
-data/
+# Keep data/processed for Render Docker build, but exclude large/local artifacts.
+data/chroma/
+data/index/
+data/raw/
 doc1.json
 doc2.json
 *.sqlite3
