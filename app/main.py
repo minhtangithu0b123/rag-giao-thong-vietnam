@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -7,6 +8,8 @@ from app.rag_chain import RAGAnswerer
 from app.retriever import HybridRetriever
 from app.schemas import AskRequest, RetrieveRequest
 
+
+load_dotenv()
 
 app = FastAPI(title="RAG Luat Giao Thong API")
 

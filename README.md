@@ -56,7 +56,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 Set key trong terminal đang chạy backend:
 
 ```powershell
-$env:OPENAI_API_KEY="sk-..."
+$env:OPENAI_API_KEY="your_openai_api_key_here"
 $env:LLM_MODEL="gpt-4o-mini"
 ```
 
@@ -162,7 +162,7 @@ copy .env.example .env
 Sau đó mở `.env` và điền API key:
 
 ```text
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=your_openai_api_key_here
 LLM_MODEL=gpt-4o-mini
 ENABLE_QUERY_REWRITE=1
 ```
@@ -185,4 +185,40 @@ Lưu ý:
 - Cần có sẵn `data/chroma` đã ingest trên máy host.
 - Docker image có thể build lâu vì `torch` và `sentence-transformers` khá nặng.
 - Nếu chưa có Docker Desktop trên Windows thì vẫn chạy project bằng `.venv` như hướng dẫn local ở trên.
+
+## 11. Deploy Backend Lên Render
+
+Render free tier dễ bị hết RAM nếu cài `torch` và `sentence-transformers`. Vì vậy khi deploy dùng file dependency nhẹ hơn:
+
+```text
+requirements-render.txt
+```
+
+Trên Render tạo Web Service với cấu hình:
+
+```text
+Runtime: Python 3
+Build Command: pip install -r requirements-render.txt && python scripts/ingest_chroma.py
+Start Command: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+
+Environment Variables:
+
+```text
+OPENAI_API_KEY=your_openai_api_key_here
+LLM_MODEL=gpt-4o-mini
+ENABLE_QUERY_REWRITE=1
+EMBEDDING_PROVIDER=openai
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+PYTHONIOENCODING=utf-8
+```
+
+Khi dùng `EMBEDDING_PROVIDER=openai`, Render không cần load model embedding local nên giảm rủi ro `Exited with status 137` do thiếu RAM.
+
+Sau khi deploy xong, kiểm tra:
+
+```text
+https://your-render-service.onrender.com/health
+https://your-render-service.onrender.com/docs
+```
 

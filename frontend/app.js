@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/ask";
+const API_URL = "https://rag-giao-thong-vietnam.onrender.com/ask";
 const SESSION_ID_KEY = "rag_giaothong_session_id";
 
 const messagesEl = document.querySelector("#messages");
