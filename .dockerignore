@@ -10,13 +10,11 @@ __pycache__/
 .codex/
 .agents/
 
-# Keep data/processed for Render Docker build, but exclude large/local artifacts.
-data/chroma/
+# Keep processed data and the prebuilt Chroma index for Render Docker build.
 data/index/
 data/raw/
 doc1.json
 doc2.json
-*.sqlite3
 
 # Editor and OS files
 .vscode/
