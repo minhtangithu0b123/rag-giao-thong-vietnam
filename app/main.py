@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.chat_memory import ChatMemory
+from app.intent import detect_small_talk
 from app.query_rewriter import QueryRewriter
 from app.rag_chain import RAGAnswerer
 from app.retriever import HybridRetriever
@@ -53,6 +54,17 @@ def retrieve(request: RetrieveRequest):
 
 @app.post("/ask")
 def ask(request: AskRequest):
+    intent, small_talk_answer = detect_small_talk(request.question)
+    if small_talk_answer:
+        memory.add_turn(request.session_id, request.question, small_talk_answer)
+        return {
+            "answer": small_talk_answer,
+            "citations": [],
+            "rewritten_question": request.question,
+            "was_rewritten": False,
+            "intent": intent,
+        }
+
     history = memory.get(request.session_id)
     retrieval_question, was_rewritten = rewriter.rewrite(request.question, history)
     results = retriever.retrieve(
@@ -68,6 +80,7 @@ def ask(request: AskRequest):
             "citations": [],
             "rewritten_question": retrieval_question,
             "was_rewritten": was_rewritten,
+            "intent": "legal_question",
         }
 
     answer = answerer.answer(
@@ -82,4 +95,5 @@ def ask(request: AskRequest):
         "citations": results,
         "rewritten_question": retrieval_question,
         "was_rewritten": was_rewritten,
+        "intent": "legal_question",
     }
