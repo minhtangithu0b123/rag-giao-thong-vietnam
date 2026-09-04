@@ -17,9 +17,8 @@ COLLECTION_NAME = "traffic_law_chunks"
 
 DENSE_TOP_K = 30
 SPARSE_TOP_K = 30
-DENSE_WEIGHT = 0.45
-SPARSE_WEIGHT = 0.30
-BOOST_WEIGHT = 0.25
+RRF_K = 60
+BOOST_SCALE = 0.02
 
 LEGAL_EXPANSIONS = {
     "vượt đèn đỏ": [
@@ -210,13 +209,16 @@ class HybridRetriever:
         metas = results["metadatas"][0]
         distances = results["distances"][0]
 
-        for doc, meta, distance in zip(docs, metas, distances):
+        for rank, (doc, meta, distance) in enumerate(zip(docs, metas, distances), start=1):
             chunk = self.make_chunk_from_chroma(doc, meta)
             chunk_id = chunk["id"]
             candidates[chunk_id] = {
                 "chunk": chunk,
+                "dense_rank": rank,
+                "sparse_rank": None,
                 "dense_score": 1.0 / (1.0 + float(distance)),
                 "sparse_score": 0.0,
+                "rrf_score": 1.0 / (RRF_K + rank),
                 "boost_score": 0.0,
                 "distance": float(distance),
                 "from_dense": True,
@@ -232,7 +234,7 @@ class HybridRetriever:
         max_score = max((float(scores[index]) for index in top_indexes), default=0.0)
 
         candidates = {}
-        for index in top_indexes:
+        for rank, index in enumerate(top_indexes, start=1):
             raw_score = float(scores[index])
             if raw_score <= 0:
                 continue
@@ -242,8 +244,11 @@ class HybridRetriever:
             sparse_score = raw_score / max_score if max_score > 0 else 0.0
             candidates[chunk_id] = {
                 "chunk": chunk,
+                "dense_rank": None,
+                "sparse_rank": rank,
                 "dense_score": 0.0,
                 "sparse_score": sparse_score,
+                "rrf_score": 1.0 / (RRF_K + rank),
                 "boost_score": 0.0,
                 "distance": math.inf,
                 "from_dense": False,
@@ -294,7 +299,9 @@ class HybridRetriever:
 
         for chunk_id, sparse_item in sparse_candidates.items():
             if chunk_id in merged:
+                merged[chunk_id]["sparse_rank"] = sparse_item["sparse_rank"]
                 merged[chunk_id]["sparse_score"] = sparse_item["sparse_score"]
+                merged[chunk_id]["rrf_score"] += sparse_item["rrf_score"]
                 merged[chunk_id]["from_sparse"] = True
             else:
                 merged[chunk_id] = sparse_item
@@ -303,11 +310,7 @@ class HybridRetriever:
         for item in merged.values():
             boost = self.metadata_boost(question, item["chunk"])
             item["boost_score"] = boost
-            item["final_score"] = (
-                DENSE_WEIGHT * item["dense_score"]
-                + SPARSE_WEIGHT * item["sparse_score"]
-                + BOOST_WEIGHT * item["boost_score"]
-            )
+            item["final_score"] = item["rrf_score"] + BOOST_SCALE * boost
             ranked.append(item)
 
         ranked.sort(key=lambda item: item["final_score"], reverse=True)
@@ -319,7 +322,10 @@ class HybridRetriever:
             "score": item["final_score"],
             "dense_score": item["dense_score"],
             "sparse_score": item["sparse_score"],
+            "rrf_score": item["rrf_score"],
             "boost_score": item["boost_score"],
+            "dense_rank": item["dense_rank"],
+            "sparse_rank": item["sparse_rank"],
             "citation": chunk.get("citation", ""),
             "source": chunk.get("source", ""),
             "so_hieu": chunk.get("so_hieu", ""),
