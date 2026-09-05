@@ -3,8 +3,10 @@ __pycache__/
 *.pyc
 .env
 
-# Local vector/data artifacts. Chroma is versioned for deployment, index/raw stay local.
+# Local vector/data artifacts. Keep raw/processed/index locally unless you intentionally want to version them.
+data/chroma/
 data/index/
+*.sqlite3
 
 # Large/local documents
 doc1.json
