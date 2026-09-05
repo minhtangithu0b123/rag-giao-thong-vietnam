@@ -178,7 +178,7 @@ async function handleSubmit(event) {
     setStatus("M\u1ea5t k\u1ebft n\u1ed1i", "offline");
     addMessage(
       "error",
-      "Ch\u01b0a g\u1ecdi \u0111\u01b0\u1ee3c backend. H\u00e3y ki\u1ec3m tra FastAPI \u0111ang ch\u1ea1y \u1edf http://localhost:8000 r\u1ed3i th\u1eed l\u1ea1i."
+      "Ch\u01b0a g\u1ecdi \u0111\u01b0\u1ee3c backend Render. D\u1ecbch v\u1ee5 c\u00f3 th\u1ec3 \u0111ang kh\u1edfi \u0111\u1ed9ng l\u1ea1i, h\u00e3y ch\u1edd kho\u1ea3ng 30-60 gi\u00e2y r\u1ed3i th\u1eed l\u1ea1i."
     );
     renderCitations([]);
   } finally {
